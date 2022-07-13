@@ -14,9 +14,7 @@ function App() {
   const gameState = useSelector(function (state) {
     return state.gameState
   })
-  const gameStatus = useSelector(function (state) {
-    return state.gameState.gameStatus
-  })
+
   const [boardSize, SetboardSize] = useState(globalObject.optionsArray[0])
   const changeBoardSize = (event) => SetboardSize(parseInt(event.target.value))
   const gameArray = gameState.gameMatrix
@@ -24,6 +22,10 @@ function App() {
     width: gameArray.length * 80 + 100 + "px",
   }
   const isGameInProcess = gameState.gameOver === false && gameArray.length > 0
+  const gameStatus = useSelector(function (state) {
+    return state.gameState.gameResult
+  })
+  console.log(gameStatus)
   return (
     <div className="App">
       <Styled.Button
@@ -43,10 +45,7 @@ function App() {
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
 
         {gameState.gameOver && gameArray.length > 0 && (
-          <NewGameButton
-            gameResult={gameState.gameResult}
-            // onNewGame={newGamState}
-          />
+          <NewGameButton gameResult={gameState.gameResult} />
         )}
         {isGameInProcess ? (
           <Styled.BtnEvent>
@@ -68,6 +67,7 @@ function App() {
             })}
           </Styled.BtnEvent>
         ) : null}
+        {gameStatus ? " WIN" : "GAMEOVER"}
       </Styled.NewGameArea>
     </div>
   )
