@@ -67,7 +67,7 @@ function App() {
             })}
           </Styled.BtnEvent>
         ) : null}
-        {gameStatus ? " WIN" : "GAMEOVER"}
+        {/* {gameStatus ? " WIN" : "GAMEOVER"} */}
       </Styled.NewGameArea>
     </div>
   )
