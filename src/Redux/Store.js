@@ -9,8 +9,8 @@ const store = createStore(
         ...state,
         gameState: {
           gameMatrix: action.payload.gameMatrix,
-          gameOver: false,
-          gameResult: "",
+          gameOver: action.payload.gameOver,
+          gameResult: action.payload.gameResult,
         },
       }
     }
@@ -26,11 +26,6 @@ const store = createStore(
 )
 
 export default store
-
-
-
-
-
 
 // import { createStore, combineReducers } from "redux"
 

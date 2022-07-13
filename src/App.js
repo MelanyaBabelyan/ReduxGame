@@ -25,7 +25,28 @@ function App() {
   const gameStatus = useSelector(function (state) {
     return state.gameState.gameResult
   })
-  console.log(gameStatus)
+  // console.log(gameStatus)
+  const NewGameButton = ({ gameResult, onNewGame }) => {
+    return (
+      <div>
+        <DisplayOfTheFinalMessage result={gameResult} />
+        <Styled.Button
+          onClick={() =>
+            dispatch({
+              type: "change",
+              payload: {
+                gameMatrix: createMatrixWithAllCharacters(boardSize),
+                gameOver: false,
+                gameResult: "",
+              },
+            })
+          }
+        >
+          PLAY AGAIN
+        </Styled.Button>
+      </div>
+    )
+  }
   return (
     <div className="App">
       <Styled.Button
@@ -34,6 +55,8 @@ function App() {
             type: "change",
             payload: {
               gameMatrix: createMatrixWithAllCharacters(boardSize),
+              gameOver: false,
+              gameResult: "",
             },
           })
         }
@@ -67,7 +90,7 @@ function App() {
             })}
           </Styled.BtnEvent>
         ) : null}
-        {/* {gameStatus ? " WIN" : "GAMEOVER"} */}
+        {/* {gameStatus === "win" ? "You Win" : "GAMEOVER"} */}
       </Styled.NewGameArea>
     </div>
   )
@@ -97,15 +120,6 @@ const GameBoard = ({ gameArray }) => {
       )
     })
   })
-}
-
-const NewGameButton = ({ gameResult, onNewGame }) => {
-  return (
-    <div>
-      <DisplayOfTheFinalMessage result={gameResult} />
-      <Styled.Button onClick={onNewGame}>PLAY AGAIN</Styled.Button>
-    </div>
-  )
 }
 
 // const ControlButtons = () => {
