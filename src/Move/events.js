@@ -1,6 +1,6 @@
 import findCordinateCharacter from "./findCordinateCharacter"
 import moveWolves from "./moveWolves"
-import globalObject from "../GameWrapper/globals"
+import globalObject from "../Global/globals"
 import getDirectionCoord from "./getDirection"
 import rabbitGoTo from "./moveRabbit"
 import DisplayOfTheFinalMessage from "../Message/message"

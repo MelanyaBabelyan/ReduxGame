@@ -1,5 +1,5 @@
-import globalObject from "../GameWrapper/globals"
-import changeGameStatus from "../GameWrapper/gameStatus"
+import globalObject from "../Global/globals"
+import changeGameStatus from "../GameStatus/gameStatus"
 
 const rabbitGoTo = (gameState, rabbitIndex, x, y) => {
   const [i, j] = rabbitIndex

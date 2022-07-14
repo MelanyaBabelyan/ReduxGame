@@ -1,4 +1,3 @@
-import * as Styled from "./styleMessage"
 import { Message, MessageImg } from "./styleMessage"
 
 const DisplayOfTheFinalMessage = (props) => {

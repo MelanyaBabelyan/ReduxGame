@@ -1,7 +1,7 @@
-import globalObject from "../GameWrapper/globals"
+import globalObject from "../Global/globals"
 import findTheStepNearTheRabbit from "./findCordinateNearRabbit"
 import findCordinateCharacter from "./findCordinateCharacter"
-import changeGameStatus from "../GameWrapper/gameStatus"
+import changeGameStatus from "../GameStatus/gameStatus"
 import distance from "./distance"
 
 const moveWolves = (gameState, rabbitIndex) => {
