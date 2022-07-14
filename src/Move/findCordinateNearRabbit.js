@@ -2,7 +2,7 @@ import globalObject from "../GameWrapper/globals"
 
 const findTheStepNearTheRabbit = (gameState, index) => {
   const array = gameState.gameMatrix
-  const isLegitim=(cell) =>{
+  const isLegitim = (cell) => {
     const legitimCells = [globalObject.FREE_CELL, globalObject.RABBIT]
 
     return legitimCells.includes(
@@ -25,10 +25,7 @@ const getNearCellsOf = (index) => {
     [x, y - 1],
   ]
 }
-const isInRange = (array, [x, y]) => {
-  if (x != array.length && x >= 0 && y != array.length && y >= 0) {
-    return true
-  }
-}
+const isInRange = (array, [x, y]) =>
+  x != array.length && x >= 0 && y != array.length && y >= 0
 
 export default findTheStepNearTheRabbit
