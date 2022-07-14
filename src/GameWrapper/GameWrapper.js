@@ -1,9 +1,9 @@
 import * as Styled from "./stylesheet "
-import createMatrixWithAllCharacters from "../createMatrix/createMatrix"
+import createMatrixWithAllCharacters from "../CreateMatrix/createMatrix"
 import Image from "./defineImg"
 import DisplayOfTheFinalMessage from "../Message/message"
 import eventKeysFunctions from "../Move/events"
-import globalObject from "../globals"
+import globalObject from "./globals"
 
 export const StartNewGame = ({ dispatch, boardSize }) => {
   return (

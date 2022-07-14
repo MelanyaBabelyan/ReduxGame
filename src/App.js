@@ -1,10 +1,8 @@
 import { useDispatch } from "react-redux"
-import "./App.css"
-import createMatrixWithAllCharacters from "./createMatrix/createMatrix"
 import { useSelector } from "react-redux"
 import { useState } from "react"
-import globalObject from "./globals"
-import * as Styled from "./indexStyle"
+import globalObject from "./GameWrapper/globals"
+import * as Styled from "./AppStyle"
 import {
   StartNewGame,
   GameBoard,

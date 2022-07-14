@@ -9,7 +9,6 @@ const initialState = {
 }
 
 const rootReduser = (state, action) => {
-  console.log(action, "rqwerwet")
   if (action.type === "change") {
     return {
       ...state,
