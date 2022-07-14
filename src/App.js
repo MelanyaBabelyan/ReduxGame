@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { useState } from "react"
 import globalObject from "./GameWrapper/globals"
-import * as Styled from "./AppStyle"
+import NewGameArea from "./AppStyle"
 import {
   StartNewGame,
   GameBoard,
@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <StartNewGame dispatch={dispatch} boardSize={boardSize} />
       <OptionsDropDown onChange={(event) => changeBoardSize(event)} />
-      <Styled.NewGameArea style={styleObject}>
+      <NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
         {gameState.gameOver && gameArray.length > 0 && (
           <NewGameButton
@@ -39,7 +39,7 @@ function App() {
         {isGameInProcess ? (
           <ControlButtons dispatch={dispatch} gameState={gameState} />
         ) : null}
-      </Styled.NewGameArea>
+      </NewGameArea>
     </div>
   )
 }
