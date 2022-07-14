@@ -1,4 +1,5 @@
 import { createStore } from "redux"
+
 const initialState = {
   gameState: {
     gameMatrix: [],
@@ -21,6 +22,7 @@ const rootReduser = (state, action) => {
   }
   return state
 }
+
 const store = createStore(
   rootReduser,
   initialState,
@@ -30,5 +32,3 @@ const store = createStore(
 )
 
 export default store
-
-

@@ -16,12 +16,14 @@ const eventKeysFunctions = (gameState, eventKey) => {
     rabbitIndex,
     eventKey
   )
+
   rabbitGoTo(gameState, rabbitIndex, newX, newY)
 
   if (gameState.gameOver) {
     DisplayOfTheFinalMessage(gameState)
     return gameState
   }
+
   moveWolves(gameState, rabbitIndex)
   if (gameState.gameOver) {
     DisplayOfTheFinalMessage(gameState)
