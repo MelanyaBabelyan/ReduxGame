@@ -5,7 +5,6 @@ import { useSelector } from "react-redux"
 import { useState } from "react"
 import globalObject from "./globals"
 import * as Styled from "./indexStyle"
-
 import {
   StartNewGame,
   GameBoard,
