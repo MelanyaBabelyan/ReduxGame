@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { useState } from "react"
-import globalObject from "./Global/globals"
+import globalObject from "../Global/globals"
 import NewGameArea from "./AppStyle"
-import StartButton from "./StartButton/StartButton"
-import ControlButtons from "./ControlButtons/ControlButtons"
-import OptionsDropDown from "./OptionsDropDown/OptionsDropDown"
-import { GameBoard } from "./GameBoard/GameBoard"
-import { NewGameButton } from "./NewGameButton/NewGameButton"
+import StartButton from "../StartButton/StartButton"
+import ControlButtons from "../ControlButtons/ControlButtons"
+import OptionsDropDown from "../OptionsDropDown/OptionsDropDown"
+import { GameBoard } from "../GameBoard/GameBoard"
+import { NewGameButton } from "../NewGameButton/NewGameButton"
 function App() {
   const dispatch = useDispatch()
 
