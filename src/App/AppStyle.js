@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
- const NewGameArea = styled.div`
+const NewGameArea = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -13,3 +13,13 @@ import styled from "styled-components"
   margin: 0 auto;
 `
 export default NewGameArea
+// export const Button = styled.button`
+//   width: 150px;
+//   padding: 10px;
+//   background: teal;
+//   color: white;
+//   border-radius: 25px;
+//   margin: 0 20px;
+//   cursor: pointer;
+//   margin: 45px;
+// `

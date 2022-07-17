@@ -1,7 +1,13 @@
 import { BtnEvent, DirectionButtons } from "./StyleControlButtons"
 import eventKeysFunctions from "../Move/events"
 import globalObject from "../Global/globals"
-const ControlButtons = ({ dispatch, gameState }) => {
+import { useDispatch, useSelector } from "react-redux"
+
+const ControlButtons = () => {
+  const dispatch = useDispatch()
+  const gameState = useSelector(function (state) {
+    return state.gameState
+  })
   return (
     <BtnEvent>
       {globalObject.directionButtons.map((direction) => {

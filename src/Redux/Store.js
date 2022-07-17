@@ -1,26 +1,6 @@
 import { createStore } from "redux"
-
-const initialState = {
-  gameState: {
-    gameMatrix: [],
-    gameOver: false,
-    gameResult: "",
-  },
-}
-
-const rootReduser = (state, action) => {
-  if (action.type === "change") {
-    return {
-      ...state,
-      gameState: {
-        gameMatrix: action.payload.gameMatrix,
-        gameOver: action.payload.gameOver,
-        gameResult: action.payload.gameResult,
-      },
-    }
-  }
-  return state
-}
+import initialState from "./InitialState"
+import rootReduser from "./RootReduser"
 
 const store = createStore(
   rootReduser,
