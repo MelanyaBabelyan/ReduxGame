@@ -21,7 +21,7 @@ const moveWolves = (gameState, rabbitIndex) => {
       steps.forEach((step) => {
         if (array[step[0]][step[1]] === globalObject.RABBIT) {
           changeGameStatus(gameState, "gameOver")
-          return
+          return gameState
         }
       })
       const distances = steps.map((step) => distance(rabbitIndex, step))
@@ -29,7 +29,7 @@ const moveWolves = (gameState, rabbitIndex) => {
       const nearPoint = steps[index]
       if (nearPoint === globalObject.RABBIT) {
         changeGameStatus(gameState, "gameOver")
-        return
+        return gameState
       }
       array[nearPoint[globalObject.X]][nearPoint[globalObject.Y]] =
         globalObject.WOLF

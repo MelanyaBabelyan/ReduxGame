@@ -3,22 +3,21 @@ import DisplayOfTheFinalMessage from "../Message/message"
 import createMatrixWithAllCharacters from "../CreateMatrix/createMatrix"
 import { useSelector, useDispatch } from "react-redux"
 
-export const NewGameButton = () => {
+export const NewGameButton = ({ gameState }) => {
   const dispatch = useDispatch()
-  const gameState = useSelector(function (state) {
-    return state.gameState
-  })
+  const boardNumber = gameState.boardNumber
+  const boardSize = gameState.boardSize
+  const gameResult = gameState.gameResult
   return (
     <div>
-      <DisplayOfTheFinalMessage result={gameState.gameResult} />
+      <DisplayOfTheFinalMessage gameResult={gameResult} />
       <Button
         onClick={() =>
           dispatch({
             type: "newGame",
             payload: {
-              gameMatrix: createMatrixWithAllCharacters(5),
-              gameOver: false,
-              gameResult: "",
+              boardNumber: boardNumber,
+              boardSize: boardSize,
             },
           })
         }

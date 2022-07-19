@@ -1,7 +1,9 @@
 import { Message, MessageImg } from "./styleMessage"
 
 const DisplayOfTheFinalMessage = (props) => {
-  if (props.result === "win") {
+  console.log(props)
+  console.log(props.gameResult, "proos")
+  if (props.gameResult === "win") {
     return (
       <Message>
         Congratulations! You Won!
@@ -9,7 +11,7 @@ const DisplayOfTheFinalMessage = (props) => {
       </Message>
     )
   }
-  if (props.result === "gameOver") {
+  if (props.gameResult === "gameOver") {
     return (
       <Message>
         Game over

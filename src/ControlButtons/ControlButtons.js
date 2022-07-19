@@ -3,7 +3,7 @@ import eventKeysFunctions from "../Move/events"
 import globalObject from "../Global/globals"
 import { useDispatch, useSelector } from "react-redux"
 
-const ControlButtons = ({ gameState, boardNumber }) => {
+const ControlButtons = ({ gameState }) => {
   const dispatch = useDispatch()
 
   return (
@@ -13,12 +13,12 @@ const ControlButtons = ({ gameState, boardNumber }) => {
           <DirectionButtons
             direction={direction}
             key={direction}
-            onClick={() =>
+            onClick={() => {
               dispatch({
                 type: "change",
                 payload: eventKeysFunctions({ ...gameState }, direction),
               })
-            }
+            }}
           >
             {direction}
           </DirectionButtons>

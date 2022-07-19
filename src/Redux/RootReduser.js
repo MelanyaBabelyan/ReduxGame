@@ -1,3 +1,4 @@
+import changeGameState from "./ChangeGame"
 import newGame from "./newGame"
 
 const newBoard = {
@@ -16,12 +17,9 @@ export const rootReduser = (state = initialState, action) => {
       newGame(state, action)
       return [...state]
       break
-      
+
     case "change":
-      state[action.boardNumber] = {
-        ...state[action.boardNumber],
-        boardNumber: action.boardNumber,
-      }
+      changeGameState(state, action)
       return [...state]
       break
 
@@ -34,12 +32,3 @@ export const rootReduser = (state = initialState, action) => {
 }
 
 export default rootReduser
-
-// state[action.boardNumber] = {
-//   ...state[action.boardNumber],
-//   gameMatrix: action.gameMatrix,
-//   boardSize: action.boardSize,
-//   boardNumber: action.boardNumber,
-//   gameOver: action.gameOver,
-//   gameResult: action.gameResult,
-// }

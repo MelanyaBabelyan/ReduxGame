@@ -6,7 +6,6 @@ import rabbitGoTo from "./moveRabbit"
 import DisplayOfTheFinalMessage from "../Message/message"
 
 const eventKeysFunctions = (gameState, eventKey) => {
-  console.log(gameState, "gameState")
   const rabbitIndex = findCordinateCharacter(
     gameState.gameMatrix,
     globalObject.RABBIT
@@ -18,16 +17,14 @@ const eventKeysFunctions = (gameState, eventKey) => {
     eventKey
   )
   rabbitGoTo(gameState, rabbitIndex, newX, newY)
-
-  if (gameState.gameOver) {
-    DisplayOfTheFinalMessage(gameState)
-    return
+  if (gameState.gameOver === true) {
+    return gameState
   }
 
   moveWolves(gameState, rabbitIndex)
+  console.log(gameState, "wolf")
   if (gameState.gameOver) {
-    DisplayOfTheFinalMessage(gameState)
-    return
+    return gameState
   }
 
   return gameState
