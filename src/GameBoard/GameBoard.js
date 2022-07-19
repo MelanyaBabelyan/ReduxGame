@@ -2,10 +2,7 @@ import Image from "../defineImg/defineImg"
 import { Box } from "./StyleGameBoard"
 import { useSelector } from "react-redux"
 
-export const GameBoard = () => {
-  const gameArray = useSelector(function (state) {
-    return state.gameState.gameMatrix
-  })
+export const GameBoard = ({ gameArray }) => {
   return gameArray.map((row, x) => {
     return row.map((column, y) => {
       return (

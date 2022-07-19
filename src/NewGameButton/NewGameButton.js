@@ -14,7 +14,7 @@ export const NewGameButton = () => {
       <Button
         onClick={() =>
           dispatch({
-            type: "change",
+            type: "newGame",
             payload: {
               gameMatrix: createMatrixWithAllCharacters(5),
               gameOver: false,
