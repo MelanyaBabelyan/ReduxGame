@@ -1,4 +1,4 @@
-import Image from "../DefineImg/Index"
+import Image from "../../DefineImg/Index"
 import { Box } from "./Style"
 
 export const GameBoard = ({ gameArray }) => {

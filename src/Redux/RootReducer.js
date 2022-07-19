@@ -1,5 +1,5 @@
 import changeGameState from "./ChangeGame"
-import newGame from "./NewGame"
+import newGame from "./newGame"
 const newBoard = {
   gameMatrix: [],
   gameOver: false,

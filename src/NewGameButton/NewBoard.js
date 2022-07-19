@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { Button } from "../GameBoard/Style"
+import { Button } from "./Style"
 const NewBoardButton = () => {
   const dispatch = useDispatch()
   return (

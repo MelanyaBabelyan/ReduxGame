@@ -1,8 +1,8 @@
 import globalObject from "../../Globals/Index"
-import findTheStepNearTheRabbit from "../../FindCordinateCharacter/CordinateNearRabbit"
-import findCordinateCharacter from "../../FindCordinateCharacter/Index"
+import findTheStepNearTheRabbit from "../../FindCordinate/FindCordinateCharacter/CordinateNearRabbit"
+import findCordinateCharacter from "../../FindCordinate/FindCordinateCharacter/Index"
 import gameOver from "../../GameOver/Index"
-import distance from "../Distance/Index"
+import distance from "../../FindCordinate/Distance/Index"
 
 const moveWolves = (gameState, rabbitIndex) => {
   const array = gameState.gameMatrix

@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux"
 const ControlButtons = ({ gameState }) => {
   const dispatch = useDispatch()
   const boardNumber = gameState.boardNumber
-  const boardSize = gameState.boardSize
   return (
     <BtnEvent>
       {globalObject.directionButtons.map((direction) => {
@@ -19,7 +18,7 @@ const ControlButtons = ({ gameState }) => {
                 type: "changeGameBoard",
                 payload: {
                   direction: direction,
-                  gameState: gameState,
+                  boardNumber: boardNumber,
                 },
               })
             }}

@@ -1,7 +1,7 @@
-import findCordinateCharacter from "../FindCordinateCharacter/Index"
+import findCordinateCharacter from "../FindCordinate/FindCordinateCharacter/Index"
 import moveWolves from "./MoveWolves/Index"
 import globalObject from "../Globals/Index"
-import getDirectionCoord from "./GetDirectionCoord/Index"
+import getDirectionCoord from "../FindCordinate/GetDirectionCoord/Index"
 import rabbitGoTo from "./MoveRabbit/Index"
 
 const eventKeysFunctions = (gameState, eventKey) => {
