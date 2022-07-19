@@ -6,7 +6,7 @@ import globalObject from "../Globals/Index"
 import { GameBoard } from "./GameBoard/Index"
 import { ButtonPlayAgain } from "../NewGameButton/PlayAgain"
 import ControlButtons from "../ControlButtons/Index"
-
+import RemoveButton from "../RemoveButton/Index"
 const getGameState = (state) => state
 const GameArea = ({ gameState, boardNumber }) => {
   const currentGameState = useSelector(getGameState)
@@ -38,6 +38,7 @@ const GameArea = ({ gameState, boardNumber }) => {
       <OptionsDropDown onChange={(event) => changeBoardSize(event)} />
       <NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
+        {isGameInProcess && <RemoveButton boardNumber={boardNumber} />}
         {gameState.gameOver && gameArray.length > 0 && (
           <ButtonPlayAgain gameState={gameState} />
         )}

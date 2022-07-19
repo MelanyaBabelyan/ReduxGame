@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import GameArea from "../GameArea/Index"
 import NewBoardButton from "../NewGameButton/NewBoard"
+
 function App() {
   const gameBoards = useSelector((state) => state)
   return (
