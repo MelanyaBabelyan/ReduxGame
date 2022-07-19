@@ -1,8 +1,8 @@
-import globalObject from "../Global/globals"
-import findTheStepNearTheRabbit from "./findCordinateNearRabbit"
-import findCordinateCharacter from "./findCordinateCharacter"
-import changeGameStatus from "../GameStatus/gameStatus"
-import distance from "./distance"
+import globalObject from "../../Globals/Index"
+import findTheStepNearTheRabbit from "../../FindCordinateCharacter/CordinateNearRabbit"
+import findCordinateCharacter from "../../FindCordinateCharacter/Index"
+import gameOver from "../../GameOver/Index"
+import distance from "../Distance/Index"
 
 const moveWolves = (gameState, rabbitIndex) => {
   const array = gameState.gameMatrix
@@ -13,14 +13,14 @@ const moveWolves = (gameState, rabbitIndex) => {
 
   const moveWolf = (wolf) => {
     if (gameState.gameOver) {
-      changeGameStatus(gameState, "gameOver")
+      gameOver(gameState, "gameOver")
       return
     }
     const steps = findTheStepNearTheRabbit(gameState, wolf)
     if (steps.length > 0) {
       steps.forEach((step) => {
         if (array[step[0]][step[1]] === globalObject.RABBIT) {
-          changeGameStatus(gameState, "gameOver")
+          gameOver(gameState, "gameOver")
           return gameState
         }
       })
@@ -28,7 +28,7 @@ const moveWolves = (gameState, rabbitIndex) => {
       const index = distances.indexOf(Math.min(...distances))
       const nearPoint = steps[index]
       if (nearPoint === globalObject.RABBIT) {
-        changeGameStatus(gameState, "gameOver")
+        gameOver(gameState, "gameOver")
         return gameState
       }
       array[nearPoint[globalObject.X]][nearPoint[globalObject.Y]] =

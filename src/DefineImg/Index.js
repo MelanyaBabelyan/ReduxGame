@@ -1,4 +1,4 @@
-import globalObject from "../Global/globals"
+import globalObject from "../Globals/Index"
 
 const Image = (props) => {
   if (props.character === globalObject.RABBIT) {

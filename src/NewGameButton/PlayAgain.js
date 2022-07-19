@@ -1,9 +1,8 @@
-import { Button } from "./StyleNewGameButton"
-import DisplayOfTheFinalMessage from "../Message/message"
-import createMatrixWithAllCharacters from "../CreateMatrix/createMatrix"
-import { useSelector, useDispatch } from "react-redux"
+import { Button } from "./Style"
+import DisplayOfTheFinalMessage from "../Message/Index"
+import { useDispatch } from "react-redux"
 
-export const NewGameButton = ({ gameState }) => {
+export const ButtonPlayAgain = ({ gameState }) => {
   const dispatch = useDispatch()
   const boardNumber = gameState.boardNumber
   const boardSize = gameState.boardSize
@@ -14,7 +13,7 @@ export const NewGameButton = ({ gameState }) => {
       <Button
         onClick={() =>
           dispatch({
-            type: "newGame",
+            type: "newGameBoard",
             payload: {
               boardNumber: boardNumber,
               boardSize: boardSize,

@@ -1,4 +1,4 @@
-import globalObject from "../Global/globals"
+import globalObject from "../Globals/Index"
 
 const findTheStepNearTheRabbit = (gameState, index) => {
   const array = gameState.gameMatrix

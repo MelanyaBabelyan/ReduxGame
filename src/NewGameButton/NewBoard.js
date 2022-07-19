@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
-import { Button } from "./StyleGameBoard"
-const NewBoard = () => {
+import { Button } from "../GameBoard/Style"
+const NewBoardButton = () => {
   const dispatch = useDispatch()
   return (
     <div>
@@ -16,4 +16,4 @@ const NewBoard = () => {
     </div>
   )
 }
-export default NewBoard
+export default NewBoardButton

@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux"
-import GameArea from "../GameArea/GameArea"
-import NewBoard from "../GameBoard/NewBoard"
+import GameArea from "../GameArea/Index"
+import NewBoardButton from "../NewGameButton/NewBoard"
 function App() {
   const gameBoards = useSelector((state) => state)
   return (
     <div>
-      <NewBoard />
+      <NewBoardButton />
       {gameBoards.map((gameState, i) => (
         <GameArea key={i} gameState={gameState} boardNumber={i} />
       ))}

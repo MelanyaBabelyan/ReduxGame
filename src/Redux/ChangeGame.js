@@ -1,12 +1,17 @@
+import eventKeysFunctions from "../Move/Index"
 const changeGameState = (state, action) => {
-  state[action.payload.boardNumber] = {
-    ...state[action.payload.boardNumber],
-    gameOver: action.payload.gameOver,
-    gameResult: action.payload.gameResult,
-    gameMatrix: action.payload.gameMatrix,
-    boardNumber: action.payload.boardNumber,
-    boardSize: action.payload.boardSize,
-  }
+      const gameState = eventKeysFunctions(
+        action.payload.gameState,
+        action.payload.direction
+      )
+      state[gameState.boardNumber] = {
+        ...state[gameState.boardNumber],
+        gameOver: gameState.gameOver,
+        gameResult: gameState.gameResult,
+        gameMatrix: gameState.gameMatrix,
+        boardNumber: gameState.boardNumber,
+        boardSize: gameState.boardSize,
+      }
 }
 
 export default changeGameState

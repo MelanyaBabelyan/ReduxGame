@@ -1,9 +1,8 @@
-import findCordinateCharacter from "./findCordinateCharacter"
-import moveWolves from "./moveWolves"
-import globalObject from "../Global/globals"
-import getDirectionCoord from "./getDirection"
-import rabbitGoTo from "./moveRabbit"
-import DisplayOfTheFinalMessage from "../Message/message"
+import findCordinateCharacter from "../FindCordinateCharacter/Index"
+import moveWolves from "./MoveWolves/Index"
+import globalObject from "../Globals/Index"
+import getDirectionCoord from "./GetDirectionCoord/Index"
+import rabbitGoTo from "./MoveRabbit/Index"
 
 const eventKeysFunctions = (gameState, eventKey) => {
   const rabbitIndex = findCordinateCharacter(
@@ -22,7 +21,6 @@ const eventKeysFunctions = (gameState, eventKey) => {
   }
 
   moveWolves(gameState, rabbitIndex)
-  console.log(gameState, "wolf")
   if (gameState.gameOver) {
     return gameState
   }

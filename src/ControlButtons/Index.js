@@ -1,11 +1,12 @@
-import { BtnEvent, DirectionButtons } from "./StyleControlButtons"
-import eventKeysFunctions from "../Move/events"
-import globalObject from "../Global/globals"
-import { useDispatch, useSelector } from "react-redux"
+import { BtnEvent, DirectionButtons } from "./Style"
+
+import globalObject from "../Globals/Index"
+import { useDispatch } from "react-redux"
 
 const ControlButtons = ({ gameState }) => {
   const dispatch = useDispatch()
-
+  const boardNumber = gameState.boardNumber
+  const boardSize = gameState.boardSize
   return (
     <BtnEvent>
       {globalObject.directionButtons.map((direction) => {
@@ -15,8 +16,11 @@ const ControlButtons = ({ gameState }) => {
             key={direction}
             onClick={() => {
               dispatch({
-                type: "change",
-                payload: eventKeysFunctions({ ...gameState }, direction),
+                type: "changeGameBoard",
+                payload: {
+                  direction: direction,
+                  gameState: gameState,
+                },
               })
             }}
           >

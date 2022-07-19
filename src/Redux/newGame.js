@@ -1,4 +1,4 @@
-import createMatrixWithAllCharacters from "../CreateMatrix/createMatrix"
+import createMatrixWithAllCharacters from "../CreateMatrix/Index"
 
 const newGame = (state, action) => {
   state[action.payload.boardNumber] = {

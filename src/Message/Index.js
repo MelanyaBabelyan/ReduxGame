@@ -1,8 +1,6 @@
-import { Message, MessageImg } from "./styleMessage"
+import { Message, MessageImg } from "./Style"
 
 const DisplayOfTheFinalMessage = (props) => {
-  console.log(props)
-  console.log(props.gameResult, "proos")
   if (props.gameResult === "win") {
     return (
       <Message>
@@ -19,6 +17,7 @@ const DisplayOfTheFinalMessage = (props) => {
       </Message>
     )
   }
+  return null
 }
 
 export default DisplayOfTheFinalMessage

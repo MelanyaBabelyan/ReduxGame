@@ -1,8 +1,7 @@
-import globalObject from "../Global/globals"
-import changeGameStatus from "../GameStatus/gameStatus"
+import globalObject from "../../Globals/Index"
+import gameOver from "../../GameOver/Index"
 
 const rabbitGoTo = (gameState, rabbitIndex, x, y) => {
-  console.log(gameState)
   const [i, j] = rabbitIndex
   const matrix = gameState.gameMatrix
 
@@ -12,14 +11,13 @@ const rabbitGoTo = (gameState, rabbitIndex, x, y) => {
   }
 
   if (matrix[x][y] === globalObject.HOME) {
-    console.log("win`````")
-    changeGameStatus(gameState, "win")
+    gameOver(gameState, "win")
 
     return gameState
   }
 
   if (matrix[x][y] === globalObject.WOLF) {
-    changeGameStatus(gameState, "gameOver")
+    gameOver(gameState, "gameOver")
     return gameState
   }
   return gameState

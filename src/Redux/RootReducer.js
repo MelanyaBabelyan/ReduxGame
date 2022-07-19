@@ -1,6 +1,5 @@
 import changeGameState from "./ChangeGame"
-import newGame from "./newGame"
-
+import newGame from "./NewGame"
 const newBoard = {
   gameMatrix: [],
   gameOver: false,
@@ -13,12 +12,12 @@ const initialState = []
 
 export const rootReduser = (state = initialState, action) => {
   switch (action.type) {
-    case "newGame":
+    case "newGameBoard":
       newGame(state, action)
       return [...state]
       break
 
-    case "change":
+    case "changeGameBoard":
       changeGameState(state, action)
       return [...state]
       break

@@ -1,4 +1,4 @@
-import globalObject from "../Global/globals"
+import globalObject from "../Globals/Index"
 
 const createMatrixWithAllCharacters = (gameBoardSize) => {
   const matrix = CreateMatrix(gameBoardSize)

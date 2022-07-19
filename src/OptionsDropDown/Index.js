@@ -1,5 +1,5 @@
-import { Select } from "./StyleOptionsDropDown"
-import globalObject from "../Global/globals"
+import { Select } from "./Style"
+import globalObject from "../Globals/Index"
 const OptionsDropDown = ({ onChange }) => {
   return (
     <Select onChange={onChange}>
