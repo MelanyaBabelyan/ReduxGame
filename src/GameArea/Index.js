@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import OptionsDropDown from "../OptionsDropDown/Index"
 import { useState } from "react"
 import globalObject from "../Globals/Index"
-import { GameBoard } from "../GameBoard/GameBoard"
+import { GameBoard } from "../GameBoard/Index"
 import { ButtonPlayAgain } from "../NewGameButton/PlayAgain"
 import ControlButtons from "../ControlButtons/Index"
 
