@@ -3,7 +3,7 @@ import eventKeysFunctions from "../Move/events"
 import globalObject from "../Global/globals"
 import { useDispatch, useSelector } from "react-redux"
 
-const ControlButtons = ({ gameState }) => {
+const ControlButtons = ({ gameState, boardNumber }) => {
   const dispatch = useDispatch()
 
   return (

@@ -5,6 +5,7 @@ const newBoard = {
   gameOver: false,
   gameResult: "",
   boardSize: 5,
+  boardNumber: "",
 }
 
 const initialState = []
@@ -15,10 +16,10 @@ export const rootReduser = (state = initialState, action) => {
       newGame(state, action)
       return [...state]
       break
+      
     case "change":
       state[action.boardNumber] = {
         ...state[action.boardNumber],
-        gameMatrix: action.gameMatrix,
         boardNumber: action.boardNumber,
       }
       return [...state]
@@ -33,3 +34,12 @@ export const rootReduser = (state = initialState, action) => {
 }
 
 export default rootReduser
+
+// state[action.boardNumber] = {
+//   ...state[action.boardNumber],
+//   gameMatrix: action.gameMatrix,
+//   boardSize: action.boardSize,
+//   boardNumber: action.boardNumber,
+//   gameOver: action.gameOver,
+//   gameResult: action.gameResult,
+// }

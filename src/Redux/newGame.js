@@ -8,6 +8,7 @@ const newGame = (state, action) => {
     gameResult: "",
     boardSize: (state[action.payload.boardNumber].boardSize =
       action.payload.boardSize),
+    boardNumber: action.payload.boardNumber,
   }
 }
 

@@ -8,6 +8,7 @@ import { NewGameButton } from "../NewGameButton/NewGameButton"
 import ControlButtons from "../ControlButtons/ControlButtons"
 
 const GameArea = ({ gameState, boardNumber }) => {
+
   const dispatch = useDispatch()
   const [boardSize, SetboardSize] = useState(globalObject.optionsArray[0])
   const changeBoardSize = (event) => SetboardSize(parseInt(event.target.value))
@@ -35,12 +36,12 @@ const GameArea = ({ gameState, boardNumber }) => {
       <NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
         {gameState.gameOver && gameArray.length > 0 && <NewGameButton />}
-        {isGameInProcess ? <ControlButtons gameState={gameState} /> : null}
+        {isGameInProcess ? (
+          <ControlButtons gameState={gameState} boardNumber={boardNumber} />
+        ) : null}
       </NewGameArea>
     </div>
   )
 }
-
-
 
 export default GameArea
