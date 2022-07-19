@@ -1,7 +1,10 @@
 import eventKeysFunctions from "../Move/Index"
 const changeGameState = (state, action) => {
   const boardNumber = action.payload.boardNumber
-  const gameState = eventKeysFunctions(...state, action.payload.direction)
+  const gameState = eventKeysFunctions(
+    state[boardNumber],
+    action.payload.direction
+  )
   console.log(boardNumber, gameState)
   state[boardNumber] = {
     ...state[boardNumber],
@@ -11,6 +14,7 @@ const changeGameState = (state, action) => {
     boardNumber: (state[boardNumber].boardNumber = gameState.boardNumber),
     boardSize: (state[boardNumber].boardSize = gameState.boardSize),
   }
+  return state
 }
 
 export default changeGameState

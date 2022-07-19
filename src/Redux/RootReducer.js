@@ -18,8 +18,7 @@ export const rootReduser = (state = initialState, action) => {
       break
 
     case "changeGameBoard":
-      changeGameState(state, action)
-      return [...state]
+      return [...changeGameState(state, action)]
       break
 
     case "AddNewBoard":
