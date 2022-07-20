@@ -1,5 +1,6 @@
 import changeGameState from "./ChangeGame"
 import newGame from "./newGame"
+import changePlace from "./ChangePlace"
 const newBoard = {
   gameMatrix: [],
   gameOver: false,
@@ -12,28 +13,15 @@ const initialState = []
 export const rootReduser = (state = initialState, action) => {
   switch (action.type) {
     case "ChangePlaceUP":
-      if (state[action.payload - 1]) {
-        state.splice(
-          action.payload - 1,
-          2,
-          state[action.payload],
-          state[action.payload - 1]
-        )
-      }
-      return [...state]
+      const up = action.payload - 1
+      return [...changePlace(state, action, up)]
       break
 
     case "changePlaceDown":
-      if (state[action.payload + 1]) {
-        state.splice(
-          action.payload,
-          2,
-          state[action.payload + 1],
-          state[action.payload]
-        )
-      }
-      return [...state]
+      const down = action.payload + 1
+      return [...changePlace(state, action, down)]
       break
+      
     case "removeBoard":
       const boardNumber = action.payload
       return [
