@@ -33,9 +33,9 @@ const GameArea = ({ gameState, boardNumber }) => {
       >
         Start
       </Button>
-      {boardNumber > 0 && <ChangePlace boardNumber={boardNumber} />}
 
       <OptionsDropDown onChange={(event) => changeBoardSize(event)} />
+      {isGameInProcess && <ChangePlace boardNumber={boardNumber} />}
       {isGameInProcess && <RemoveButton boardNumber={boardNumber} />}
       <NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
