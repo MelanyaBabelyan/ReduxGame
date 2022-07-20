@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
 import { Button } from "./Style"
 
-const RemoveButton = ({ boardNumber }) => {
+const RemoveButton = ({ gameState }) => {
   const dispatch = useDispatch()
   return (
     <div>
@@ -9,7 +9,7 @@ const RemoveButton = ({ boardNumber }) => {
         onClick={() =>
           dispatch({
             type: "removeBoard",
-            payload: boardNumber,
+            payload: gameState.boardNumber,
           })
         }
       >

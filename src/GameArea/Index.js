@@ -8,6 +8,7 @@ import { ButtonPlayAgain } from "../NewGameButton/PlayAgain"
 import ControlButtons from "../ControlButtons/Index"
 import RemoveButton from "../RemoveButton/Index"
 import ChangePlace from "../ChangePlacesOnTheGameBoards/Index"
+
 const GameArea = ({ gameState, boardNumber }) => {
   const dispatch = useDispatch()
   const [boardSize, SetboardSize] = useState(globalObject.optionsArray[0])
@@ -16,7 +17,6 @@ const GameArea = ({ gameState, boardNumber }) => {
   const styleObject = {
     width: gameArray.length * 80 + 100 + "px",
   }
-
   const isGameInProcess = gameState.gameOver === false && gameArray.length > 0
   return (
     <div>
@@ -36,7 +36,7 @@ const GameArea = ({ gameState, boardNumber }) => {
 
       <OptionsDropDown onChange={(event) => changeBoardSize(event)} />
       {isGameInProcess && <ChangePlace boardNumber={boardNumber} />}
-      {isGameInProcess && <RemoveButton boardNumber={boardNumber} />}
+      {isGameInProcess && <RemoveButton gameState={gameState} />}
       <NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
 

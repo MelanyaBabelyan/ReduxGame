@@ -12,22 +12,27 @@ const initialState = []
 export const rootReduser = (state = initialState, action) => {
   switch (action.type) {
     case "ChangePlaceUP":
-      const newState = [...state]
       if (state[action.payload - 1]) {
-        newState.splice(action.payload, 1, state[action.payload - 1])
-        newState.splice(action.payload - 1, 1, state[action.payload])
+        state.splice(
+          action.payload - 1,
+          2,
+          state[action.payload],
+          state[action.payload - 1]
+        )
       }
-
-      return [...newState]
+      return [...state]
       break
 
     case "changePlaceDown":
-      const newStatee = [...state]
       if (state[action.payload + 1]) {
-        newStatee.splice(action.payload, 1, state[action.payload + 1])
-        newStatee.splice(action.payload + 1, 1, state[action.payload])
+        state.splice(
+          action.payload,
+          2,
+          state[action.payload + 1],
+          state[action.payload]
+        )
       }
-      return [...newStatee]
+      return [...state]
       break
     case "removeBoard":
       const boardNumber = action.payload
