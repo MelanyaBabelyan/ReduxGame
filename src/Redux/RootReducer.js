@@ -21,7 +21,7 @@ export const rootReduser = (state = initialState, action) => {
       const down = action.payload + 1
       return [...changePlace(state, action, down)]
       break
-      
+
     case "removeBoard":
       const boardNumber = action.payload
       return [
@@ -41,6 +41,7 @@ export const rootReduser = (state = initialState, action) => {
     case "AddNewBoard":
       return [...state, { ...newBoard }]
       break
+
     default:
       return [...state]
   }

@@ -1,20 +1,30 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Button } from "./Style"
 
 const ChangePlace = ({ boardNumber }) => {
   const dispatch = useDispatch()
-  return (
-    <div>
-      <Button
-        onClick={() =>
-          dispatch({
-            type: "ChangePlaceUP",
-            payload: boardNumber,
-          })
-        }
-      >
-        Up
-      </Button>
+  const state = useSelector((state) => state)
+  console.log(state.length)
+  const Up = () => {
+    console.log("up")
+    return (
+      <div>
+        <Button
+          onClick={() =>
+            dispatch({
+              type: "ChangePlaceUP",
+              payload: boardNumber,
+            })
+          }
+        >
+          Up
+        </Button>
+      </div>
+    )
+  }
+  const Down = () => {
+    console.log("down")
+    return (
       <Button
         onClick={() =>
           dispatch({
@@ -25,8 +35,24 @@ const ChangePlace = ({ boardNumber }) => {
       >
         Down
       </Button>
-    </div>
-  )
+    )
+  }
+  if (state[boardNumber - 1] && state[boardNumber + 1]) {
+    return (
+      <div>
+        <Up />
+        <Down />
+      </div>
+    )
+  }
+  if (state[boardNumber + 1]) {
+    console.log("aaaDown")
+    return <Down />
+  }
+  if (state[boardNumber - 1]) {
+    console.log("aaaUP")
+    return <Up />
+  }
 }
 
 export default ChangePlace
