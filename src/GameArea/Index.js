@@ -8,7 +8,7 @@ import { ButtonPlayAgain } from "../NewGameButton/PlayAgain"
 import ControlButtons from "../ControlButtons/Index"
 import RemoveButton from "../RemoveButton/Index"
 import ChangePlace from "../ChangePlacesOnTheGameBoards/Index"
-
+import StepsForwardAndBackward from "../StepsForwardAndBackward/Index"
 const GameArea = ({ gameState, boardNumber }) => {
   const dispatch = useDispatch()
   const [boardSize, SetboardSize] = useState(globalObject.optionsArray[0])
@@ -37,6 +37,7 @@ const GameArea = ({ gameState, boardNumber }) => {
       <OptionsDropDown onChange={(event) => changeBoardSize(event)} />
       {isGameInProcess && <ChangePlace boardNumber={boardNumber} />}
       {isGameInProcess && <RemoveButton gameState={gameState} />}
+      {isGameInProcess && <StepsForwardAndBackward boardNumber={boardNumber} />}
       <NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
 

@@ -1,21 +1,20 @@
 import { useDispatch } from "react-redux"
-import { Button } from "./Style"
+import { Button, Img } from "./Style"
 
 const RemoveButton = ({ gameState }) => {
   const dispatch = useDispatch()
   return (
-    <div>
-      <Button
-        onClick={() =>
-          dispatch({
-            type: "removeBoard",
-            payload: gameState.boardNumber,
-          })
-        }
-      >
-        Remove Board
-      </Button>
-    </div>
+    <Button
+      onClick={() =>
+        dispatch({
+          type: "removeBoard",
+          payload: gameState.boardNumber,
+        })
+      }
+    >
+      Remove Board
+      <Img src="img/delete.png" />
+    </Button>
   )
 }
 export default RemoveButton

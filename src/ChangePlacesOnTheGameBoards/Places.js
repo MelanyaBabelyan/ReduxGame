@@ -1,20 +1,18 @@
-import { Button } from "./Style"
+import { Button, Img } from "./Style"
 
 export const Up = ({ boardNumber, dispatch }) => {
   console.log("up")
   return (
-    <div>
-      <Button
-        onClick={() =>
-          dispatch({
-            type: "ChangePlaceUP",
-            payload: boardNumber,
-          })
-        }
-      >
-        Up
-      </Button>
-    </div>
+    <Button
+      onClick={() =>
+        dispatch({
+          type: "ChangePlaceUP",
+          payload: boardNumber,
+        })
+      }
+    >
+      <Img src="img/up-arrow.png" alt="" />
+    </Button>
   )
 }
 
@@ -29,7 +27,7 @@ export const Down = ({ boardNumber, dispatch }) => {
         })
       }
     >
-      Down
+      <Img src="img/down-arrow.png" />
     </Button>
   )
 }

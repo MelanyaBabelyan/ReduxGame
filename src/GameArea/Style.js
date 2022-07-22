@@ -7,7 +7,7 @@ export const Button = styled.button`
   border-radius: 25px;
   margin: 0 20px;
   cursor: pointer;
-  margin: 5px;
+  margin: 45px;
 `
 
 export const NewGameArea = styled.div`

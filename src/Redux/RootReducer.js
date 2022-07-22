@@ -12,6 +12,10 @@ const newBoard = {
 const initialState = []
 export const rootReduser = (state = initialState, action) => {
   switch (action.type) {
+    case "BackStep":
+    
+      return { ...state }
+      break
     case "ChangePlaceUP":
       const up = action.payload - 1
       return [...changePlace(state, action, up)]
