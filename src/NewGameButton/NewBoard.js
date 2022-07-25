@@ -1,4 +1,5 @@
-import { useDispatch} from "react-redux"
+import { useDispatch } from "react-redux"
+import ACTIONS from "../Redux/Actions"
 import { Button } from "./Style"
 const NewBoardButton = () => {
   const dispatch = useDispatch()
@@ -7,7 +8,7 @@ const NewBoardButton = () => {
       <Button
         onClick={() => {
           dispatch({
-            type: "AddNewBoard",
+            type: ACTIONS.addNewBoard,
           })
         }}
       >

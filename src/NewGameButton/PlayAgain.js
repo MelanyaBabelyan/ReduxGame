@@ -1,6 +1,7 @@
 import { Button } from "./Style"
 import DisplayOfTheFinalMessage from "../Message/Index"
 import { useDispatch } from "react-redux"
+import ACTIONS from "../Redux/Actions"
 
 export const ButtonPlayAgain = ({ gameState }) => {
   const dispatch = useDispatch()
@@ -13,7 +14,7 @@ export const ButtonPlayAgain = ({ gameState }) => {
       <Button
         onClick={() =>
           dispatch({
-            type: "newGameBoard",
+            type: ACTIONS.newGameBoard,
             payload: {
               boardNumber: boardNumber,
               boardSize: boardSize,

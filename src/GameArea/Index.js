@@ -9,6 +9,8 @@ import ControlButtons from "../ControlButtons/Index"
 import RemoveButton from "../RemoveButton/Index"
 import ChangePlace from "../ChangePlacesOnTheGameBoards/Index"
 import StepsForwardAndBackward from "../StepsForwardAndBackward/Index"
+import ACTIONS from "../Redux/Actions"
+
 const GameArea = ({ gameState, boardNumber }) => {
   const dispatch = useDispatch()
   const [boardSize, SetboardSize] = useState(globalObject.optionsArray[0])
@@ -23,7 +25,7 @@ const GameArea = ({ gameState, boardNumber }) => {
       <Button
         onClick={() =>
           dispatch({
-            type: "newGameBoard",
+            type: ACTIONS.newGameBoard,
             payload: {
               boardNumber: boardNumber,
               boardSize: boardSize,

@@ -1,3 +1,4 @@
+import ACTIONS from "../Redux/Actions"
 import { Button, Img } from "./Style"
 
 export const Up = ({ boardNumber, dispatch }) => {
@@ -5,7 +6,7 @@ export const Up = ({ boardNumber, dispatch }) => {
     <Button
       onClick={() =>
         dispatch({
-          type: "ChangePlaceUP",
+          type: ACTIONS.changePlaceUp,
           payload: boardNumber,
         })
       }
@@ -20,7 +21,7 @@ export const Down = ({ boardNumber, dispatch }) => {
     <Button
       onClick={() =>
         dispatch({
-          type: "changePlaceDown",
+          type: ACTIONS.changePlaceDown,
           payload: boardNumber,
         })
       }

@@ -1,5 +1,6 @@
 import { Button, Img } from "./Style"
 import { useSelector } from "react-redux"
+import ACTIONS from "../Redux/Actions"
 
 export const Undo = ({ dispatch }) => {
   const state = useSelector((state) => state)
@@ -13,7 +14,7 @@ export const Undo = ({ dispatch }) => {
       <Button
         onClick={() =>
           dispatch({
-            type: "undo",
+            type: ACTIONS.undo,
             boardNumber: boardNumber,
           })
         }
@@ -30,7 +31,7 @@ export const Redo = ({ dispatch, boardNumber }) => {
       <Button
         onClick={() =>
           dispatch({
-            type: "redo",
+            type: ACTIONS.redo,
             boardNumber: boardNumber,
           })
         }

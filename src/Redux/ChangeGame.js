@@ -5,7 +5,6 @@ const changeGameState = (state, action) => {
     state[boardNumber],
     action.payload.direction
   )
-  console.log(boardNumber, gameState)
   state[boardNumber] = {
     ...state[boardNumber],
     gameOver: (state[boardNumber].gameOver = gameState.gameOver),
