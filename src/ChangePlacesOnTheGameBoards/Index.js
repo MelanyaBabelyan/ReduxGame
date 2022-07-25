@@ -3,7 +3,7 @@ import { Up, Down } from "./Places"
 
 const ChangePlace = ({ boardNumber }) => {
   const dispatch = useDispatch()
-  const state = useSelector((state) => state)
+  const state = useSelector((state) => state.present)
   if (state[boardNumber - 1] && state[boardNumber + 1]) {
     return (
       <div>

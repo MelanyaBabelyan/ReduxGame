@@ -7,7 +7,7 @@ export const Button = styled.button`
   border-radius: 10px;
   margin: 0 10px;
   cursor: pointer;
-  margin: 5px;
+  margin: 15px;
 `
 export const Img = styled.img`
   height: 20px;

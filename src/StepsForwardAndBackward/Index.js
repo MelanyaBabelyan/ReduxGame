@@ -1,30 +1,30 @@
 import { useDispatch, useSelector } from "react-redux"
-import { Button, Img } from "./Style"
-
+import { Undo, Redo } from "./Steps"
 const StepsForwardAndBackward = ({ boardNumber }) => {
   const dispatch = useDispatch()
   const state = useSelector((state) => state)
-  console.log(boardNumber)
-  return (
-    <div>
-      Back Step
-      <Button
-        onClick={() =>
-          dispatch({
-            type: "BackStep",
-            boardNumber: boardNumber,
-          })
-        }
-      >
-        <Img src="img/left-arrow.png" />
-      </Button>
+  if (state.future.length > 0 && state.past.length > 1) {
+    return (
+      <div>
+        <Undo dispatch={dispatch} boardNumber={boardNumber} />
+        <Redo dispatch={dispatch} boardNumber={boardNumber} />
+      </div>
+    )
+  }
 
-      
-      <Button>
-        <Img src="img/right-arrow.png" />
-      </Button>
-      Next Step
-    </div>
-  )
+  if (state.future.length > 0) {
+    return (
+      <div>
+        <Redo dispatch={dispatch} boardNumber={boardNumber} />
+      </div>
+    )
+  }
+  if (state.past.length > 1) {
+    return (
+      <div>
+        <Undo dispatch={dispatch} boardNumber={boardNumber} />
+      </div>
+    )
+  }
 }
 export default StepsForwardAndBackward

@@ -3,7 +3,7 @@ import GameArea from "../GameArea/Index"
 import NewBoardButton from "../NewGameButton/NewBoard"
 
 function App() {
-  const gameBoards = useSelector((state) => state)
+  const gameBoards = useSelector((state) => state.present)
   return (
     <div>
       <NewBoardButton />
@@ -15,6 +15,3 @@ function App() {
 }
 
 export default App
-
-
-

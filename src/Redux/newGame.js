@@ -10,6 +10,7 @@ const newGame = (state, action) => {
       action.payload.boardSize),
     boardNumber: action.payload.boardNumber,
   }
+  return state
 }
 
 export default newGame
