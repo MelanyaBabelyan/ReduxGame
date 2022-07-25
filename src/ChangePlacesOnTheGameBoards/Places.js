@@ -1,7 +1,6 @@
 import { Button, Img } from "./Style"
 
 export const Up = ({ boardNumber, dispatch }) => {
-  console.log("up")
   return (
     <Button
       onClick={() =>
@@ -17,7 +16,6 @@ export const Up = ({ boardNumber, dispatch }) => {
 }
 
 export const Down = ({ boardNumber, dispatch }) => {
-  console.log("down")
   return (
     <Button
       onClick={() =>

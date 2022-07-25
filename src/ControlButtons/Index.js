@@ -3,9 +3,8 @@ import { BtnEvent, DirectionButtons } from "./Style"
 import globalObject from "../Globals/Index"
 import { useDispatch } from "react-redux"
 
-const ControlButtons = ({ gameState }) => {
+const ControlButtons = ({ boardNumber }) => {
   const dispatch = useDispatch()
-  const boardNumber = gameState.boardNumber
   return (
     <BtnEvent>
       {globalObject.directionButtons.map((direction) => {

@@ -44,7 +44,7 @@ const GameArea = ({ gameState, boardNumber }) => {
         {gameState.gameOver && gameArray.length > 0 && (
           <ButtonPlayAgain gameState={gameState} />
         )}
-        {isGameInProcess ? <ControlButtons gameState={gameState} /> : null}
+        {isGameInProcess ? <ControlButtons boardNumber={boardNumber} /> : null}
       </NewGameArea>
     </div>
   )
