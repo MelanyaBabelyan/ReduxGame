@@ -33,6 +33,10 @@ const ACTIONS = {
     type: "ADD_NEW_BOARD",
     title: "AddNewBoard",
   },
+  history: {
+    type: "HISTORY",
+    title: "History"
+  },
 }
 
 export default ACTIONS

@@ -10,8 +10,10 @@ import RemoveButton from "../RemoveButton/Index"
 import ChangePlace from "../ChangePlacesOnTheGameBoards/Index"
 import StepsForwardAndBackward from "../StepsForwardAndBackward/Index"
 import ACTIONS from "../Redux/Actions"
+import History from "../History/Index"
 
 const GameArea = ({ gameState, boardNumber }) => {
+  const history = useSelector((state) => state.history)
   const dispatch = useDispatch()
   const [boardSize, SetboardSize] = useState(globalObject.optionsArray[0])
   const changeBoardSize = (event) => SetboardSize(parseInt(event.target.value))
@@ -40,6 +42,7 @@ const GameArea = ({ gameState, boardNumber }) => {
       {isGameInProcess && <ChangePlace boardNumber={boardNumber} />}
       {isGameInProcess && <RemoveButton gameState={gameState} />}
       {isGameInProcess && <StepsForwardAndBackward boardNumber={boardNumber} />}
+      {history.length > 1 ? <History boardNumber={boardNumber} /> : null}
       <NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
 
