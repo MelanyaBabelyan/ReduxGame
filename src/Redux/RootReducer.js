@@ -2,7 +2,7 @@ import changeGameState from "./ChangeGame"
 import newGame from "./newGame"
 import changePlace from "./ChangePlace"
 import ACTIONS from "./Actions"
-import previousStep from "./History"
+import previousSituations from "./History"
 
 const newBoard = {
   gameMatrix: [],
@@ -26,7 +26,7 @@ export const rootReduser = (state = initialState, action) => {
     case ACTIONS.history:
       return {
         past: [...past],
-        present: [...previousStep(present, action, history)],
+        present: [...previousSituations(state, action)],
         future: [...future],
         history: [...history],
       }
