@@ -1,15 +1,17 @@
 import createMatrixWithAllCharacters from "../CreateMatrix/Index"
 
 const newGame = (state, action) => {
-  state[action.payload.boardNumber] = {
-    ...state[action.payload.boardNumber],
+  const boardNumber = action.payload.boardNumber
+  state[boardNumber] = {
+    ...state[boardNumber],
     gameMatrix: createMatrixWithAllCharacters(action.payload.boardSize),
     gameOver: false,
     gameResult: "",
-    boardSize: (state[action.payload.boardNumber].boardSize =
-      action.payload.boardSize),
-    boardNumber: action.payload.boardNumber,
+    boardSize: (state[boardNumber].boardSize = action.payload.boardSize),
+    boardNumber: boardNumber,
+    actionType: (state[boardNumber].actionType = action.type.title),
   }
+
   return state
 }
 

@@ -24,7 +24,7 @@ const eventKeysFunctions = (gameState, eventKey) => {
   if (gameState.gameOver) {
     return gameState
   }
-
+  gameState.actionType = eventKey
   return gameState
 }
 

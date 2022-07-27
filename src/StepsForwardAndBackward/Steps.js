@@ -15,7 +15,7 @@ export const Undo = ({ dispatch }) => {
         onClick={() =>
           dispatch({
             type: ACTIONS.undo,
-            boardNumber: boardNumber,
+            payload: boardNumber,
           })
         }
       >
@@ -32,7 +32,7 @@ export const Redo = ({ dispatch, boardNumber }) => {
         onClick={() =>
           dispatch({
             type: ACTIONS.redo,
-            boardNumber: boardNumber,
+            payload: boardNumber,
           })
         }
       >

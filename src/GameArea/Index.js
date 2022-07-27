@@ -22,6 +22,7 @@ const GameArea = ({ gameState, boardNumber }) => {
     width: gameArray.length * 80 + 100 + "px",
   }
   const isGameInProcess = gameState.gameOver === false && gameArray.length > 0
+  const isHistory = gameState.actionType && history.length > 0
   return (
     <div>
       <Button
@@ -37,15 +38,14 @@ const GameArea = ({ gameState, boardNumber }) => {
       >
         Start
       </Button>
-
       <OptionsDropDown onChange={(event) => changeBoardSize(event)} />
       {isGameInProcess && <ChangePlace boardNumber={boardNumber} />}
       {isGameInProcess && <RemoveButton gameState={gameState} />}
       {isGameInProcess && <StepsForwardAndBackward boardNumber={boardNumber} />}
-      {history.length > 1 ? <History boardNumber={boardNumber} /> : null}
+      {/* {history.length > 0 && <History boardNumber={boardNumber} />} */}
+      {isHistory && <History boardNumber={boardNumber} />}
       <NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
-
         {gameState.gameOver && gameArray.length > 0 && (
           <ButtonPlayAgain gameState={gameState} />
         )}

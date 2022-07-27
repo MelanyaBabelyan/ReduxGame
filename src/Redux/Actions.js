@@ -23,11 +23,11 @@ const ACTIONS = {
   },
   newGameBoard: {
     type: "NEW_GAME_BOARD",
-    title: "NewGameBoard",
+    title: "New game board",
   },
   changeGameBoard: {
     type: "CHANGE_GAME_BOARD",
-    title: "NewGameBoard",
+    title: "Change game Board",
   },
   addNewBoard: {
     type: "ADD_NEW_BOARD",
@@ -35,7 +35,7 @@ const ACTIONS = {
   },
   history: {
     type: "HISTORY",
-    title: "History"
+    title: "History",
   },
 }
 
