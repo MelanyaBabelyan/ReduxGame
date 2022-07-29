@@ -14,7 +14,8 @@ const changeGameState = (state, action) => {
     gameMatrix: (state[boardNumber].gameMatrix = gameState.gameMatrix),
     boardNumber: (state[boardNumber].boardNumber = gameState.boardNumber),
     boardSize: (state[boardNumber].boardSize = gameState.boardSize),
-    actionType: (state[boardNumber].actionType = gameState.actionType),
+    actionType: (state[boardNumber].actionType =
+      "Went in the " + gameState.actionType + " direction"),
   }
   return state
 }

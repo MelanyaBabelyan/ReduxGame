@@ -21,9 +21,9 @@ const ACTIONS = {
     type: "REMOVE_BOARD",
     title: "Remove Board",
   },
-  newGameBoard: {
+  startNewGame: {
     type: "NEW_GAME_BOARD",
-    title: "New game board",
+    title: " Creat new game board",
   },
   changeGameBoard: {
     type: "CHANGE_GAME_BOARD",
@@ -36,6 +36,10 @@ const ACTIONS = {
   history: {
     type: "HISTORY",
     title: "History",
+  },
+  playAgain: {
+    type: "PLAY_AGAIN",
+    title: "Play Again",
   },
 }
 

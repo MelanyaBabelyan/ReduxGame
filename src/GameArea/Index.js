@@ -28,7 +28,7 @@ const GameArea = ({ gameState, boardNumber }) => {
       <Button
         onClick={() =>
           dispatch({
-            type: ACTIONS.newGameBoard,
+            type: ACTIONS.startNewGame,
             payload: {
               boardNumber: boardNumber,
               boardSize: boardSize,
@@ -42,12 +42,11 @@ const GameArea = ({ gameState, boardNumber }) => {
       {isGameInProcess && <ChangePlace boardNumber={boardNumber} />}
       {isGameInProcess && <RemoveButton gameState={gameState} />}
       {isGameInProcess && <StepsForwardAndBackward boardNumber={boardNumber} />}
-      {/* {history.length > 0 && <History boardNumber={boardNumber} />} */}
       {isHistory && <History boardNumber={boardNumber} />}
       <NewGameArea style={styleObject}>
         {isGameInProcess && <GameBoard gameArray={gameArray} />}
         {gameState.gameOver && gameArray.length > 0 && (
-          <ButtonPlayAgain gameState={gameState} />
+          <ButtonPlayAgain gameState={gameState} boardNumber={boardNumber} />
         )}
         {isGameInProcess ? <ControlButtons boardNumber={boardNumber} /> : null}
       </NewGameArea>

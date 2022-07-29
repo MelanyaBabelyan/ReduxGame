@@ -31,12 +31,11 @@ export const rootReduser = (state = initialState, action) => {
         history: [...history],
       }
     case ACTIONS.redo:
-      console.log(action.payload)
       return {
         past: [...past, JSON.parse(JSON.stringify(present))],
         present: future[0],
         future: future.slice(1),
-        history: [...history, present[action.payload]],
+        history: [...history],
       }
 
     case ACTIONS.undo:
@@ -44,7 +43,7 @@ export const rootReduser = (state = initialState, action) => {
         past: past.slice(0, past.length - 1),
         present: past[past.length - 1],
         future: [present, ...future],
-        history: [...history.splice(0, past.length - 1)],
+        history: [...history],
       }
       break
 
@@ -54,7 +53,10 @@ export const rootReduser = (state = initialState, action) => {
         past: [...past],
         present: [...changePlace(present, action, up)],
         future: [...future],
-        history: [...history],
+        history: [
+          ...history,
+          JSON.parse(JSON.stringify(present[action.payload])),
+        ],
       }
       break
 
@@ -82,12 +84,14 @@ export const rootReduser = (state = initialState, action) => {
       }
       break
 
-    case ACTIONS.newGameBoard:
+    case ACTIONS.startNewGame:
       return {
         past: [present],
         present: [...newGame(present, action)],
         future: [],
-        history: [present[action.payload.boardNumber]],
+        history: [
+          JSON.parse(JSON.stringify(present[action.payload.boardNumber])),
+        ],
       }
       break
 
@@ -108,7 +112,7 @@ export const rootReduser = (state = initialState, action) => {
         past: [...past],
         present: [...present, { ...newBoard }],
         future: [...future],
-        history: history,
+        history: present,
       }
       break
 

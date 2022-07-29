@@ -8,7 +8,7 @@ const newGame = (state, action) => {
     gameOver: false,
     gameResult: "",
     boardSize: (state[boardNumber].boardSize = action.payload.boardSize),
-    boardNumber: boardNumber,
+    boardNumber: (state[boardNumber].boardNumber = boardNumber),
     actionType: (state[boardNumber].actionType = action.type.title),
   }
 
